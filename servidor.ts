@@ -8,11 +8,11 @@ import path from 'path';
 import cors from 'cors';
 import { createServer as createViteServer } from 'vite';
 import { GoogleGenAI } from '@google/genai';
-import { db } from './src/server/db.js';
+import { db } from './src/server/db';
 import { 
   User, Device, ActivationCode, Playlist, Category, Channel, 
   Movie, Series, Episode 
-} from './src/types.js';
+} from './src/types';
 
 const app = express();
 const PORT = 3000;

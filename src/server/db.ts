@@ -8,7 +8,7 @@ import path from 'path';
 import { 
   User, Device, ActivationCode, Playlist, Category, Channel, 
   Movie, Series, Episode, WatchHistory, Favorite, SystemLog 
-} from '../types.js';
+} from '../types';
 
 const DB_PATH = process.env.VERCEL 
   ? path.join('/tmp', 'db_store.json')
@@ -321,14 +321,26 @@ export class Database {
   private load() {
     try {
       if (process.env.VERCEL) {
-        const bundledPath = path.join(process.cwd(), 'db_store.json');
-        if (!fs.existsSync(DB_PATH)) {
-          if (fs.existsSync(bundledPath)) {
-            try {
-              fs.copyFileSync(bundledPath, DB_PATH);
-            } catch (copyErr) {
-              console.error('Failed to copy bundled database to /tmp', copyErr);
-            }
+        const pathsToTry = [
+          path.join(process.cwd(), 'db_store.json'),
+          path.join(__dirname, 'db_store.json'),
+          path.join(__dirname, '..', 'db_store.json'),
+          path.join(__dirname, '..', '..', 'db_store.json'),
+          path.join(__dirname, '..', '..', '..', 'db_store.json')
+        ];
+        let bundledPath = '';
+        for (const p of pathsToTry) {
+          if (fs.existsSync(p)) {
+            bundledPath = p;
+            break;
+          }
+        }
+
+        if (bundledPath && !fs.existsSync(DB_PATH)) {
+          try {
+            fs.copyFileSync(bundledPath, DB_PATH);
+          } catch (copyErr) {
+            console.error('Failed to copy bundled database to /tmp', copyErr);
           }
         }
       }
