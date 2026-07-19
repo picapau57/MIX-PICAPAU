@@ -1,5 +1,5 @@
 {
-  "name": "PICAPAU MIX",
+  "name": "MIX PICAPAU",
   "description": "Uma plataforma IPTV moderna, leve e profissional com painel administrativo, gerenciador de playlists M3U, ativação por códigos e interface otimizada para TV.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]

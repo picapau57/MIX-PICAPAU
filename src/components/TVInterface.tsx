@@ -272,7 +272,7 @@ export default function TVInterface({ user, onLogout, onPlayMedia, onOpenAdmin }
       <header className="flex items-center justify-between py-2 mb-6 border-b border-white/5 shrink-0">
         <div className="flex items-center gap-3">
           <div className="px-3 py-1.5 rounded-lg bg-gradient-to-br from-cyan-500 to-purple-600 text-white font-extrabold tracking-tighter text-xs flex items-center gap-1 font-display shadow-lg shadow-cyan-500/10">
-            <Tv size={14} /> PICAPAU MIX TV
+            <Tv size={14} /> MIX PICAPAU TV
           </div>
           <span className="hidden sm:inline text-xs text-slate-500 flex items-center gap-1 font-mono">
             <Clock size={11} /> MODO TELEVISÃO ATIVO

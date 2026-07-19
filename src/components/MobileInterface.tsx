@@ -160,7 +160,7 @@ export default function MobileInterface({ user, onLogout, onPlayMedia, onOpenAdm
           <div className="p-2 rounded-lg bg-gradient-to-br from-cyan-500 to-purple-600 text-white font-black shadow-md shadow-cyan-500/10">
             <Tv size={16} />
           </div>
-          <span className="text-sm font-black tracking-wider text-white font-display">PICAPAU MIX</span>
+          <span className="text-sm font-black tracking-wider text-white font-display">MIX PICAPAU</span>
         </div>
 
         <div className="flex items-center gap-2">
@@ -470,7 +470,7 @@ export default function MobileInterface({ user, onLogout, onPlayMedia, onOpenAdm
             </div>
             <div className="p-4 border-b border-white/5 flex justify-between items-center">
               <span className="text-slate-500">Player Preferencial</span>
-              <span className="font-bold text-cyan-400">Interno PICAPAU MIX (HLS)</span>
+              <span className="font-bold text-cyan-400">Interno MIX PICAPAU (HLS)</span>
             </div>
           </div>
 

@@ -345,7 +345,7 @@ export default function AdminPanel({ currentAdmin, onClose }: AdminPanelProps) {
           </div>
           <div>
             <h1 className="text-lg font-bold tracking-tight text-white flex items-center gap-2 font-display">
-              PICAPAU MIX <span className="text-[10px] bg-white/10 text-cyan-400 font-semibold px-2 py-0.5 rounded-full border border-white/5 uppercase">PAINEL GERENCIAL</span>
+              MIX PICAPAU <span className="text-[10px] bg-white/10 text-cyan-400 font-semibold px-2 py-0.5 rounded-full border border-white/5 uppercase">PAINEL GERENCIAL</span>
             </h1>
             <p className="text-xs text-slate-500">Administrador ativo: <span className="text-slate-300">{currentAdmin.name}</span></p>
           </div>
@@ -585,7 +585,7 @@ export default function AdminPanel({ currentAdmin, onClose }: AdminPanelProps) {
                         type="text" 
                         value={playlistForm.name} 
                         onChange={e => setPlaylistForm({...playlistForm, name: e.target.value})}
-                        placeholder="Ex: Canais Oficiais PicaPau" 
+                        placeholder="Ex: Canais Oficiais Mix PicaPau" 
                         className="w-full bg-[#050505] border border-white/5 rounded-lg px-3 py-2 text-xs text-slate-100 focus:outline-none focus:border-cyan-500/50"
                       />
                     </div>
@@ -937,7 +937,7 @@ export default function AdminPanel({ currentAdmin, onClose }: AdminPanelProps) {
                               >
                                 Editar
                               </button>
-                              {u.email !== 'admin@picapau.com' && (
+                              {u.email !== 'admin@mixpicapau.com' && (
                                 <button
                                   id={`btn-del-user-${u.id}`}
                                   onClick={() => handleDeleteUser(u.id)}

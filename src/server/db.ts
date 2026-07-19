@@ -175,7 +175,7 @@ const INITIAL_EPISODES: Episode[] = [
 const INITIAL_PLAYLISTS: Playlist[] = [
   {
     id: 'playlist-default',
-    name: 'PICAPAU Premium Oficial (Legal)',
+    name: 'MIX PICAPAU Premium Oficial (Legal)',
     type: 'm3u',
     url: 'https://raw.githubusercontent.com/picapau/iptv/main/legal_sample.m3u',
     status: 'active',
@@ -188,7 +188,7 @@ const INITIAL_PLAYLISTS: Playlist[] = [
 const INITIAL_ACTIVATION_CODES: ActivationCode[] = [
   {
     id: 'code-1',
-    code: 'PICAPAU50',
+    code: 'MIX50',
     durationDays: 30,
     deviceLimit: 3,
     createdAt: new Date().toISOString(),
@@ -221,8 +221,8 @@ const INITIAL_ACTIVATION_CODES: ActivationCode[] = [
 const INITIAL_USERS: User[] = [
   {
     id: 'user-admin',
-    name: 'PicaPau Admin',
-    email: 'admin@picapau.com',
+    name: 'Mix PicaPau Admin',
+    email: 'admin@mixpicapau.com',
     password: 'admin123', // Encrypted ideally, but readable for mock panel test
     role: 'admin',
     subscriptionStatus: 'active',
@@ -236,7 +236,7 @@ const INITIAL_USERS: User[] = [
   {
     id: 'user-client',
     name: 'Amigo IPTV',
-    email: 'cliente@picapau.com',
+    email: 'cliente@mixpicapau.com',
     password: 'cliente123',
     role: 'user',
     subscriptionStatus: 'active',
@@ -279,13 +279,13 @@ const INITIAL_LOGS: SystemLog[] = [
     id: 'log-1',
     timestamp: new Date(Date.now() - 3600000 * 3).toISOString(),
     type: 'info',
-    message: 'Servidor PICAPAU MIX iniciado com sucesso.',
+    message: 'Servidor MIX PICAPAU iniciado com sucesso.',
   },
   {
     id: 'log-2',
     timestamp: new Date(Date.now() - 3600000 * 2).toISOString(),
     type: 'info',
-    message: 'Playlist PICAPAU Premium carregada e processada automaticamente. 4 canais, 3 filmes, 1 série identificados.',
+    message: 'Playlist MIX PICAPAU Premium carregada e processada automaticamente. 4 canais, 3 filmes, 1 série identificados.',
   },
   {
     id: 'log-3',

@@ -224,7 +224,7 @@ export default function App() {
               </div>
             </div>
             <h1 className="text-3xl font-extrabold tracking-tighter mt-5 text-white font-display">
-              PICAPAU <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">MIX</span>
+              MIX <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">PICAPAU</span>
             </h1>
             <p className="text-[10px] text-slate-500 font-bold tracking-widest uppercase mt-1">SISTEMA ULTRA-LEVE DE IPTV & VOD</p>
           </div>
@@ -343,17 +343,17 @@ export default function App() {
               <div className="grid grid-cols-2 gap-2 text-[10px]">
                 <button
                   id="btn-preset-admin"
-                  onClick={() => { setEmail('admin@picapau.com'); setPassword('admin123'); setLoginTab('traditional'); }}
+                  onClick={() => { setEmail('admin@mixpicapau.com'); setPassword('admin123'); setLoginTab('traditional'); }}
                   className="p-2 bg-[#050505] hover:bg-white/5 text-[#F8FAFC]/80 rounded-xl border border-white/5 hover:border-cyan-500/30 transition cursor-pointer font-semibold text-center"
                 >
                   Entrar como Admin
                 </button>
                 <button
                   id="btn-preset-voucher"
-                  onClick={() => { setActivationCode('PICAPAU50'); setLoginTab('code'); }}
+                  onClick={() => { setActivationCode('MIX50'); setLoginTab('code'); }}
                   className="p-2 bg-[#050505] hover:bg-white/5 text-[#F8FAFC]/80 rounded-xl border border-white/5 hover:border-cyan-500/30 transition cursor-pointer font-semibold text-center"
                 >
-                  Usar Cupom PICAPAU50
+                  Usar Cupom MIX50
                 </button>
               </div>
             </div>
@@ -362,7 +362,7 @@ export default function App() {
 
           {/* Quick legal footnote */}
           <footer className="mt-8 text-[10px] text-slate-500 max-w-xs text-center leading-relaxed">
-            <p>PICAPAU MIX IPTV v2.5. Este software suporta apenas playlists e canais de streaming legalmente autorizados pelo proprietário.</p>
+            <p>MIX PICAPAU IPTV v2.5. Este software suporta apenas playlists e canais de streaming legalmente autorizados pelo proprietário.</p>
           </footer>
 
         </div>

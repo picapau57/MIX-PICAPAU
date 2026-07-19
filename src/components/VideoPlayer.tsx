@@ -284,7 +284,7 @@ export default function VideoPlayer({
             <div>
               <div className="text-xs text-cyan-400 font-semibold tracking-wider uppercase flex items-center gap-1.5">
                 <Tv size={12} className="animate-pulse" />
-                PICAPAU MIX PLAYER
+                MIX PICAPAU PLAYER
               </div>
               <h1 className="text-lg md:text-xl font-bold text-white tracking-tight drop-shadow-md">
                 {name}
