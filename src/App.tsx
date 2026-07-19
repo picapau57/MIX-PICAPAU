@@ -85,6 +85,11 @@ export default function App() {
         })
       });
 
+      const contentType = res.headers.get('content-type');
+      if (contentType && contentType.includes('text/html')) {
+        throw new Error('IFRAME_COOKIE_RESTRICTION');
+      }
+
       const data = await res.json();
       if (res.ok) {
         return data.device;
@@ -93,7 +98,11 @@ export default function App() {
         return null;
       }
     } catch (e: any) {
-      triggerToast('Falha na comunicação de autenticação do dispositivo.', true);
+      if (e.message === 'IFRAME_COOKIE_RESTRICTION') {
+        triggerToast('Restrição de Iframe: Abra o aplicativo em uma Nova Aba para ativar.', true);
+      } else {
+        triggerToast('Falha na comunicação de autenticação do dispositivo.', true);
+      }
       return null;
     }
   };
@@ -112,6 +121,11 @@ export default function App() {
         body: JSON.stringify({ code: activationCode.trim() })
       });
 
+      const contentType = res.headers.get('content-type');
+      if (contentType && contentType.includes('text/html')) {
+        throw new Error('IFRAME_COOKIE_RESTRICTION');
+      }
+
       const data = await res.json();
       if (res.ok) {
         const activeUser = data.user;
@@ -129,7 +143,11 @@ export default function App() {
         triggerToast(data.error || 'Código inválido ou expirado.', true);
       }
     } catch (e: any) {
-      triggerToast('Erro de conexão com o servidor de ativação.', true);
+      if (e.message === 'IFRAME_COOKIE_RESTRICTION' || e instanceof SyntaxError) {
+        triggerToast('Erro de Conexão: Por favor, abra o app em uma Nova Aba usando o link no canto superior do AI Studio.', true);
+      } else {
+        triggerToast('Erro de conexão com o servidor de ativação.', true);
+      }
     } finally {
       setLoading(false);
     }
@@ -151,6 +169,11 @@ export default function App() {
         body: JSON.stringify({ email: email.trim(), password: password.trim() })
       });
 
+      const contentType = res.headers.get('content-type');
+      if (contentType && contentType.includes('text/html')) {
+        throw new Error('IFRAME_COOKIE_RESTRICTION');
+      }
+
       const data = await res.json();
       if (res.ok) {
         const activeUser = data.user;
@@ -168,7 +191,11 @@ export default function App() {
         triggerToast(data.error || 'Login ou senha incorretos.', true);
       }
     } catch (e: any) {
-      triggerToast('Erro ao validar acesso tradicional.', true);
+      if (e.message === 'IFRAME_COOKIE_RESTRICTION' || e instanceof SyntaxError) {
+        triggerToast('Erro de Conexão: Por favor, abra o app em uma Nova Aba usando o link no canto superior do AI Studio.', true);
+      } else {
+        triggerToast('Erro ao validar acesso tradicional.', true);
+      }
     } finally {
       setLoading(false);
     }
@@ -232,6 +259,17 @@ export default function App() {
           {/* Form Box */}
           <div className="w-full max-w-md bg-[#0A0A0A]/60 backdrop-blur-xl rounded-3xl border border-white/5 p-6 md:p-8 shadow-2xl relative z-10">
             
+            {/* AI Studio Iframe Tip Helper */}
+            {typeof window !== 'undefined' && window.self !== window.top && (
+              <div className="mb-6 p-4 rounded-2xl bg-cyan-950/40 border border-cyan-500/20 text-xs text-cyan-300 leading-relaxed flex items-start gap-2.5">
+                <span className="text-base shrink-0">💡</span>
+                <div>
+                  <span className="font-bold text-white block mb-0.5">Dica do Visualizador:</span>
+                  O navegador bloqueia cookies de terceiros dentro do iframe do AI Studio. Para evitar erros de conexão e validar o código <span className="font-extrabold text-cyan-400">MIX50</span>, por favor clique no botão de <span className="font-semibold text-white">"Open in new tab"</span> (Abrir em nova aba) no topo do visualizador.
+                </div>
+              </div>
+            )}
+
             {/* Tab switch */}
             <div className="grid grid-cols-2 bg-[#050505] p-1 rounded-2xl mb-6 border border-white/5">
               <button
